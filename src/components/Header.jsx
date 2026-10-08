@@ -1,5 +1,5 @@
-```jsx
 "use client";
+
 import React, { useEffect } from "react";
 import Link from "next/link";
 import {
@@ -50,22 +50,44 @@ export default function Header({ initialUser }) {
         <img src="/friendly-eats.svg" alt="FriendlyEats" />
         Friendly Eats
       </Link>
+
       {user ? (
-        <>
-          <div className="profile">
-            <p>
-              <img
-                className="profileImage"
-                src={user.photoURL || "/profile.svg"}
-                alt={user.email}
-              />
-              {user.displayName}
-            </p>
+        <div className="profile">
+          <p>
+            <img
+              className="profileImage"
+              src={user.photoURL || "/profile.svg"}
+              alt={user.email}
+            />
+            {user.displayName}
+          </p>
 
-            <div className="menu">
-              ...
-              <ul>
-                <li>{user.displayName}</li>
+          <div className="menu">
+            <ul>
+              <li>{user.displayName}</li>
 
-                <li>
-```
+              <li>
+                <a href="#" onClick={addFakeRestaurantsAndReviews}>
+                  Add sample restaurants
+                </a>
+              </li>
+
+              <li>
+                <a href="#" onClick={handleSignOut}>
+                  Sign Out
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      ) : (
+        <div className="profile">
+          <a href="#" onClick={handleSignIn}>
+            <img src="/profile.svg" alt="A placeholder user image" />
+            Sign In with Google
+          </a>
+        </div>
+      )}
+    </header>
+  );
+}

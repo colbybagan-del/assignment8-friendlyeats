@@ -1,4 +1,3 @@
-```js
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -33,4 +32,4 @@ export async function signOut() {
     console.error("Error signing out with Google", error);
   }
 }
-```
+
