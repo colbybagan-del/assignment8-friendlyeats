@@ -32,7 +32,7 @@ export async function GeminiSummary({ restaurantId }) {
     // Configure a Genkit instance.
    const ai = genkit({
   plugins: [googleAI()],
-  model: "googleai/gemini-2.5-flash",
+  model: googleAI.model("gemini-2.0-flash"), // set default model
 });
     const { text } = await ai.generate(prompt);
 
