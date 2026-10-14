@@ -1,4 +1,4 @@
-import { googleAI } from "@genkit-ai/googleai";
+import { gemini15Flash, googleAI } from "@genkit-ai/googleai";
 import { genkit } from "genkit";
 import { getReviewsByRestaurantId } from "@/src/lib/firebase/firestore.js";
 import { getAuthenticatedAppForUser } from "@/src/lib/firebase/serverApp";
@@ -32,7 +32,7 @@ export async function GeminiSummary({ restaurantId }) {
     // Configure a Genkit instance.
    const ai = genkit({
   plugins: [googleAI()],
-  model: googleAI.model("gemini-2.0-flash"), // set default model
+  model: gemini15Flash, // set default model
 });
     const { text } = await ai.generate(prompt);
 
