@@ -12,7 +12,7 @@
     "lint:fix": "npm run lint:next -- --fix && npm run lint:prettier -- --write"
   },
   "dependencies": {
-    "@genkit-ai/googleai": "^1.5.0",
+    "@genkit-ai/google-genai": "^1.42.0",
     "cookies-next": "^5.1.0",
     "firebase": "^11.6.0",
     "genkit": "^1.5.0",
